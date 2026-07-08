@@ -1,0 +1,52 @@
+{% extends 'library/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-5 mb-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">Profile Summary</h4>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title text-primary mb-3">{{ author.name }}</h3>
+                <p class="card-text">
+                    <strong>Born:</strong> {{ author.date_of_birth|default:"Unknown" }}
+                </p>
+                <p class="card-text">
+                    <strong>Biography:</strong><br>
+                    <span class="text-muted">{{ author.bio|default:"No biography provided." }}</span>
+                </p>
+            </div>
+            <div class="card-footer bg-light d-flex justify-content-between">
+                <a href="{% url 'author_update' pk=author.pk %}" class="btn btn-sm btn-warning">Edit</a>
+                <a href="{% url 'author_delete' pk=author.pk %}" class="btn btn-sm btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-7 mb-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-secondary text-white">
+                <h4 class="mb-0">Books by this Author</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    {% for book in books %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-dark">{{ book.title }}</span>
+                            <span class="badge bg-secondary rounded-pill">ISBN: {{ book.isbn }}</span>
+                        </li>
+                    {% empty %}
+                        <li class="list-group-item text-muted py-3">No books registered for this author yet.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a href="{% url 'author_list' %}" class="text-decoration-none">← Back to All Authors</a>
+</div>
+{% endblock %}

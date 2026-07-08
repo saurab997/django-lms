@@ -1,0 +1,34 @@
+{% extends 'library/base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-secondary fw-semibold">All Registered Authors</h2>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover table-striped align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Author Name</th>
+                <th scope="col">Date of Birth</th>
+                <th scope="col" class="text-end">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for author in authors %}
+                <tr>
+                    <td class="fw-bold text-primary">{{ author.name }}</td>
+                    <td>{{ author.date_of_birth|default:"—" }}</td>
+                    <td class="text-end">
+                        <a href="{% url 'author_detail' pk=author.pk %}" class="btn btn-sm btn-outline-secondary">View Profile</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3" class="text-center text-muted py-4">No authors registered yet. Click "+ Add Author" above to get started!</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
