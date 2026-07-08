@@ -25,11 +25,11 @@ SmartLib is a Django-based web application designed for librarians to manage aut
 Follow these steps to spin up the development environment on your local system:
 
 ### 1. Clone the Repository
-```bash
+
 git clone [https://github.com/saurab997/django-lms.git](https://github.com/saurab997/django-lms.git)
 cd django-lms
 
-2. Set Up a Virtual Environment
+### 2. Set Up a Virtual Environment
 python -m venv .venv
 # Activate the virtual environment
 # On Windows:
