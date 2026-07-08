@@ -7,43 +7,72 @@ SmartLib is a Django-based web application designed for librarians to manage aut
 ## Features Implemented
 
 ### Author Management (Full CRUD)
-* Create: Add new authors with browser-native calendar date pickers for birth dates.
-* Read: A master layout table list displaying all registered authors and a detailed profile view for each author displaying their complete bibliography.
-* Update: Secure forms to modify author names, biographies, or birth details.
-* Delete: Removal of author data with an explicit, built-in delete confirmation safety page.
+
+- **Create:** Add new authors with browser-native calendar date pickers for birth dates.
+- **Read:** View all registered authors in a master table and access individual author profiles displaying their complete bibliography.
+- **Update:** Modify author names, biographies, and birth details.
+- **Delete:** Remove author records with a built-in delete confirmation page.
 
 ### Book Management (Full CRUD)
-* Create: Register new books utilizing automated relation dropdown selectors for authors mapped via Django ForeignKeys.
-* Read: A primary inventory table reflecting book titles, assigned authors, unique ISBN values, and real-time stock balances, plus an isolated book detail page compiling specific metrics.
-* Update: Data adjustments for tracking inventory quantities (copies_total and copies_available).
-* Delete: Removal of cataloged volumes backed by explicit delete confirmation interfaces.
+
+- **Create:** Register new books using automated author selection through Django ForeignKey relationships.
+- **Read:** View the complete inventory including book titles, authors, ISBNs, and real-time stock balances, along with detailed pages for each book.
+- **Update:** Update book information and inventory quantities (`copies_total` and `copies_available`).
+- **Delete:** Remove books from the catalog with a delete confirmation page.
 
 ---
 
 ## Installation and Local Setup
 
-Follow these steps to spin up the development environment on your local system:
+Follow these steps to run the project locally.
 
 ### 1. Clone the Repository
 
-git clone [https://github.com/saurab997/django-lms.git](https://github.com/saurab997/django-lms.git)
+```bash
+git clone https://github.com/saurab997/django-lms.git
 cd django-lms
+```
 
 ### 2. Set Up a Virtual Environment
+
+```bash
 python -m venv .venv
-# Activate the virtual environment
-# On Windows:
+```
+
+Activate the virtual environment.
+
+**Windows**
+
+```bash
 .venv\Scripts\activate
-# On macOS/Linux:
+```
+
+**macOS/Linux**
+
+```bash
 source .venv/bin/activate
+```
 
-3. Install Required Dependencies
+### 3. Install Required Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-4. Apply Database Migrations
+### 4. Apply Database Migrations
+
+```bash
 python manage.py migrate
+```
 
-5. Launch the Local Development Server
+### 5. Launch the Local Development Server
+
+```bash
 python manage.py runserver
+```
 
-Open your browser and navigate to http://127.0.0.1:8000/authors/ to view the app.
+Open your browser and navigate to:
+
+```
+http://127.0.0.1:8000/authors/
+```
