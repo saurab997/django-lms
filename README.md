@@ -7,18 +7,23 @@ SmartLib is a Django-based web application designed for librarians to manage aut
 ## Features Implemented
 
 ### Author Management (Full CRUD)
-
-- **Create:** Add new authors with browser-native calendar date pickers for birth dates.
-- **Read:** View all registered authors in a master table and access individual author profiles displaying their complete bibliography.
-- **Update:** Modify author names, biographies, and birth details.
-- **Delete:** Remove author records with a built-in delete confirmation page.
+* **Create:** Add new authors with browser-native calendar date pickers for birth dates.
+* **Read:** View all registered authors in a master table and access individual author profiles displaying their complete bibliography.
+* **Update:** Modify author names, biographies, and birth details.
+* **Delete:** Remove author records with a built-in delete confirmation page.
 
 ### Book Management (Full CRUD)
+* **Create:** Register new books using automated author selection through Django ForeignKey relationships.
+* **Read:** View the complete inventory including book titles, authors, ISBNs, and real-time stock balances, along with detailed pages for each book.
+* **Update:** Update book information and inventory quantities (`copies_total` and `copies_available`).
+* **Delete:** Remove books from the catalog with a delete confirmation page.
 
-- **Create:** Register new books using automated author selection through Django ForeignKey relationships.
-- **Read:** View the complete inventory including book titles, authors, ISBNs, and real-time stock balances, along with detailed pages for each book.
-- **Update:** Update book information and inventory quantities (`copies_total` and `copies_available`).
-- **Delete:** Remove books from the catalog with a delete confirmation page.
+### Availability Inventory Logic
+* **Borrow a Copy:** A dedicated action on the book detail page that dynamically decreases the available stock count by 1 (disables automatically if out of stock).
+* **Return a Copy:** An action that increases the available count back up when a book is returned (prevents exceeding the library's total owned inventory).
+
+### Administration Backend
+* **Django Admin Suite:** Custom admin panels registered for both models featuring optimized search fields, list filters, and explicit tracking metrics for seamless database management.
 
 ---
 
