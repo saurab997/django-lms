@@ -12,5 +12,4 @@ __pycache__/
 # Django local cache / media
 db.sqlite3
 .pytest_cache/
-统计/
 media/

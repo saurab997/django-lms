@@ -31,4 +31,6 @@ urlpatterns = [
     path('books/<int:pk>/', book_detail, name='book_detail'),
     path('books/<int:pk>/edit/', book_update, name='book_update'), 
     path('books/<int:pk>/delete/', book_delete, name='book_delete'),
+    path('books/<int:pk>/borrow/', borrow_book, name='borrow_book'),
+    path('books/<int:pk>/return/', return_book, name='return_book'),
  ]

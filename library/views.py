@@ -85,3 +85,19 @@ def book_delete(request, pk):
         return redirect('book_list')
         
     return render(request, 'library/book_confirm_delete.html', {'book': book})
+
+def borrow_book(request, pk):
+    book = get_object_or_404(Book, pk=pk)
+    if book.copies_available > 0:
+        book.copies_available -= 1
+        book.save()
+    
+    return redirect('book_detail', pk = book.pk)
+
+def return_book(request, pk):
+    book = get_object_or_404(Book , pk = pk)
+    if book.copies_available < book.copies_total:
+        book.copies_available += 1
+        book.save()
+
+    return redirect('book_detail' , pk = book.pk)

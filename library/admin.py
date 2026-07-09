@@ -3,5 +3,13 @@ from .models import Author, Book
 
 # Register your models here.
 
-admin.site.register(Author)
-admin.site.register(Book)
+@admin.register(Author)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('name','date_of_birth')
+    search_fields = ('name',)
+
+@admin.register(Book)
+class BookAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author', 'isbn', 'copies_available', 'copies_total')
+    list_filter = ('author',)
+    search_fields = ('title', 'isbn')
