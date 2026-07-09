@@ -76,3 +76,17 @@ Open your browser and navigate to:
 ```
 http://127.0.0.1:8000/authors/
 ```
+
+### Screenshots:
+1. Book List
+   <img width="1711" height="548" alt="Screenshot 2026-07-09 220450" src="https://github.com/user-attachments/assets/3d575636-824e-4f14-bf78-96d7d459319e" />
+
+2. Book Detail
+   <img width="1660" height="918" alt="Screenshot 2026-07-09 220505" src="https://github.com/user-attachments/assets/ae298990-8cc3-419e-b515-c28f6f6967e9" />
+
+3. Add new Book
+   <img width="1658" height="898" alt="Screenshot 2026-07-09 220518" src="https://github.com/user-attachments/assets/5a523c44-c416-41ae-9547-086eb961f5ef" />
+
+4. Add new Author
+   <img width="1656" height="1011" alt="Screenshot 2026-07-09 220523" src="https://github.com/user-attachments/assets/337b704b-c5d8-4ce7-8ba1-2c0b95fe0aca" />
+
